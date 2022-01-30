@@ -9,7 +9,7 @@ export const FooterCounter = () =>{
         <>
         {QuestionsOptions && QuestionsOptions.map(question =>{
             return(
-                <Card.Footer className="text-muted">{`Question ${index} of ${QuestionsOptions.length}`}</Card.Footer>
+                <Card.Footer className="text-muted">Question{` ${index + 1} of ${QuestionsOptions.length}`}</Card.Footer>
             )
         })}
         </>
