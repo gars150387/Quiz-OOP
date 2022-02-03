@@ -6,7 +6,7 @@ import { QuestionsOptions } from './Data'
 export const QuestionsRender = () => {
 
 
-    let index = 0
+    let index = 2
 
     return (
         <>
