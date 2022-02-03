@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { ListGroup } from "react-bootstrap";
 import { AnswersOptions } from "./Answers";
 
 export const Options = () => {
-    const [index, setIndex] = useState(0)
+
+    let index = 2
+
     return (
         <>
-        {AnswersOptions && AnswersOptions.map((answer, index)=>{
+        {AnswersOptions[index] && AnswersOptions[index].map((answer) =>{
             return (
-                <ListGroup.Item key={index} >{answer[0]}</ListGroup.Item>
+                <ListGroup.Item key={index[index]} >{answer}</ListGroup.Item>
             )
-        })}
+        })
+    }
         </>
     )
 }
