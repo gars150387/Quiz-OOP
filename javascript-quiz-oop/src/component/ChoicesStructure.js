@@ -13,7 +13,7 @@ export const Options = () => {
             return (
                 <ListGroup.Item onClick={e => setClicked(
                     console.log("cliked"),[]
-                )} key={index[index]} >{answer}</ListGroup.Item>
+                )} key={answer[index]} >{answer}</ListGroup.Item>
             )
         })
     }
