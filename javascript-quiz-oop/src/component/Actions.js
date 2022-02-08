@@ -1,15 +1,29 @@
 import {useState} from "react";
 
-let Store = [{
+const state = [{
     data: {
         index: 0
     },
     actions:{
         Add(){
+            const [index, setIndex] =useState(index);
             
+            return (
+                setIndex(index++),
+                console.log('setIndex', setIndex)
+            )
 
         },
         Reset(){
+            console [reset, setReset] = useState(index)
+
+            return(
+                setReset({
+                    index: 0,
+                }),
+                console.log('reset', setReset)
+
+            )
 
         }
 
