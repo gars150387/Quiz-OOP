@@ -1,5 +1,6 @@
-import { QuestionsOptions } from "./Data"
+import { QuestionsOptions } from "./QuestionsData"
 import { Card } from "react-bootstrap"
+import { Counting } from "./Counting"
 
 
 export const FooterCounter = () => {
