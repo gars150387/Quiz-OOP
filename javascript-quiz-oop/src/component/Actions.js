@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const state = [{
+export const state = [{
     data: {
         index: 0
     },
@@ -15,7 +15,7 @@ const state = [{
 
         },
         Reset(){
-            console [reset, setReset] = useState(index)
+            const [reset, setReset] = useState()
 
             return(
                 setReset({
@@ -30,10 +30,3 @@ const state = [{
 
     }
 }]
-
-export const Cliked = () =>{
-
-    const [index, setIndex] = useState(0);
-
-    return setIndex(index++)
-}
