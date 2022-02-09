@@ -1,12 +1,18 @@
 import { Card } from "react-bootstrap";
 import { ObjectData } from "./ObjectData";
 
-export const Template = (index)=>{
-    return(
+export const Template = () => {
+    return (
         <>
-        <Card.Title>{ObjectData.question[index]}</Card.Title>
-        <Card.Body>{ObjectData.choice[index]}</Card.Body>
-        <Card.Footer>{ObjectData.answer[index]}</Card.Footer>
+            {ObjectData && ObjectData.map((question, choice, answer, index) => {
+                return (
+                    <>
+                        <Card.Title>{question[index]}</Card.Title>
+                        <Card.Body>{choice[index]}</Card.Body>
+                        <Card.Footer>{answer}</Card.Footer>
+                    </>
+                )
+            })}
         </>
     )
 }
