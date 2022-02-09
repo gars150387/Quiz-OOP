@@ -8,7 +8,7 @@ export const QuestionsRender = () => {
      * variable index defined to move from one element of the array to another one moving forward or back
      */
 
-    let index = 1
+    let index = 0
 
     return (
         <>
