@@ -24,19 +24,14 @@ export const Options = () => {
             {/* <QuestionsRender index={index} /> */}
             {AnswersOptions[index] && AnswersOptions[index].map((answer) => {
                 return (
-                    <ListGroup.Item onClick={e => setClicked(
-                        console.log("cliked"), []
-                    )}key={answer[index][index]} >{answer}</ListGroup.Item>
+                    <ListGroup.Item key={answer[index][index]} >{answer}</ListGroup.Item>
                 )
             })
             }
-            <Button className="bg-danger m-auto" style={{height: '50px', color: 'white', width: '75%'}} onClick={()=> setIncrease(
-                index++,
-                console.log('increase', index)
-            )}>SKIP</Button>
-            <Button className="bg-success m-auto" style={{height: '50px', color: 'black', width: '75%'}} >RESET</Button>
+            <Button className="bg-danger m-auto" style={{height: '50px', color: 'white', width: '75%'}} onClick={()=> setIncrease(index + 1)}>SKIP</Button>
+            <Button className="bg-success m-auto" style={{height: '50px', color: 'black', width: '75%'}} onClick={() => setReset(true)}>RESET</Button>
 
-            <Card.Footer key={QuestionsOptions[index][index]} className="text-muted">Question{` ${index + 1} of ${QuestionsOptions.length}`}</Card.Footer>
+            <Card.Footer key={index} className="text-muted">Question{` ${index + 1} of ${QuestionsOptions.length}`}</Card.Footer>
           
             {/* <FooterCounter /> */}
         </>
