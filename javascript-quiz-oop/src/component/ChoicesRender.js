@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { ListGroup } from "react-bootstrap";
 import { AnswersOptions } from "./Choices";
-import { FooterCounter } from "./Footer";
+// import { FooterCounter } from "./Footer";
 // import { QuestionsRender } from './Questions'
 import { Button, Card } from "react-bootstrap";
-import { state } from './Actions'
+// import { state } from './Actions'
 import { QuestionsOptions } from "./QuestionsData";
 
 export const Options = () => {
@@ -16,23 +16,27 @@ export const Options = () => {
     let index = increase
     console.log('index', increase)
 
+    
+
+
     return (
         <>
 
             <Card.Footer key={QuestionsOptions[index][index]} style={{ color: 'black' }}>{QuestionsOptions[index]}</Card.Footer>
             {/* comment component  */}
             {/* <QuestionsRender index={index} /> */}
-            {AnswersOptions[index] && AnswersOptions[index].map((answer) => {
+            {AnswersOptions.map((answer,) => {
                 return (
-                    <ListGroup.Item key={answer[index][index]} >{answer}</ListGroup.Item>
+                    <ListGroup.Item key={AnswersOptions[index]} >{answer[index]}</ListGroup.Item>,
+                    console.log('answers', AnswersOptions[index])
                 )
             })
             }
             <Button className="bg-danger m-auto" style={{height: '50px', color: 'white', width: '75%'}} onClick={()=> setIncrease(index + 1)}>SKIP</Button>
-            <Button className="bg-success m-auto" style={{height: '50px', color: 'black', width: '75%'}} onClick={() => setReset(true)}>RESET</Button>
+            <Button className="bg-success m-auto" style={{height: '50px', color: 'black', width: '75%'}} value={reset} onClick={() => setReset(true, console.log('index', index))}>RESET</Button>
 
             <Card.Footer key={index} className="text-muted">Question{` ${index + 1} of ${QuestionsOptions.length}`}</Card.Footer>
-          
+            {setReset ? index = 0 : index}
             {/* <FooterCounter /> */}
         </>
     )
