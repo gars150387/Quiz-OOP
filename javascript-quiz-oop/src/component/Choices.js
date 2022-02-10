@@ -3,4 +3,4 @@ export const AnswersOptions = [
     ['Venezuela', 'Brasil', 'USA', 'Germany'],
     [15, 20, 35, 85]
 ]
-console.log(AnswersOptions)
+// console.log(AnswersOptions)
