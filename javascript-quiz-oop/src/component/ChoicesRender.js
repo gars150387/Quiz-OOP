@@ -25,18 +25,19 @@ export const Options = () => {
             <Card.Footer key={QuestionsOptions[index][index]} style={{ color: 'black' }}>{QuestionsOptions[index]}</Card.Footer>
             {/* comment component  */}
             {/* <QuestionsRender index={index} /> */}
-            {AnswersOptions.map((answer,) => {
+            {AnswersOptions[index].map((answer) => {
                 return (
-                    <ListGroup.Item key={AnswersOptions[index]} >{answer[index]}</ListGroup.Item>,
-                    console.log('answers', AnswersOptions[index])
+                    <ListGroup.Item onClick={e => setClicked(
+                        console.log("cliked"), []
+                    )} key={answer[index]} >{answer}</ListGroup.Item>
                 )
-            })
+            }
+            )
             }
             <Button className="bg-danger m-auto" style={{height: '50px', color: 'white', width: '75%'}} onClick={()=> setIncrease(index + 1)}>SKIP</Button>
-            <Button className="bg-success m-auto" style={{height: '50px', color: 'black', width: '75%'}} value={reset} onClick={() => setReset(true, console.log('index', index))}>RESET</Button>
+            <Button className="bg-success m-auto" style={{height: '50px', color: 'black', width: '75%'}} value={reset}>RESET</Button>
 
             <Card.Footer key={index} className="text-muted">Question{` ${index + 1} of ${QuestionsOptions.length}`}</Card.Footer>
-            {setReset ? index = 0 : index}
             {/* <FooterCounter /> */}
         </>
     )
