@@ -2,11 +2,12 @@ import React from 'react'
 import { ObjectData } from './ObjectData'
 import { ListGroup } from 'react-bootstrap'
 
-export const TemplateToRenderData = () => {
+export const TemplateToRenderQuestion = () => {
 
     return (
         <>
-            {ObjectData.map((question, index) => {
+           {ObjectData.map((question, index) => {
+               index= 0
                 return (
                     
                     <ListGroup.Item>
