@@ -1,6 +1,6 @@
 export const ObjectData = [{
     question: "who is Gustavo",
-    choice: ["a person ", "a aircraft ", "a bird ", "a plant "],
+    choice: [" person ", " aircraft ", " bird ", " plant "],
     answer: "a person"
 },{
     question: "Where is he coming from",
