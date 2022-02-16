@@ -9,8 +9,8 @@ export const TemplateToRenderData = () => {
 
     function Clicked() {
         index++
-        if(index > ObjectData.length){
-            return index = ObjectData.length-1;
+        if (index > ObjectData.length) {
+            return index = ObjectData.length - 1;
         }
         console.log('cliked', index)
     }
@@ -18,7 +18,7 @@ export const TemplateToRenderData = () => {
     function Reset() {
         index = 0;
         console.log('reset', index)
-    }   
+    }
 
 
     return (
@@ -26,15 +26,16 @@ export const TemplateToRenderData = () => {
             <div className='row'>
                 <TemplateToRenderQuestion />
             </div>
+            <div id='divider' />
             <div className='row'>
                 {ObjectData.map((choice, value) => {
                     return (
 
                         <ListGroup.Item>
-                            <h2 className='m-auto bg-secundary' 
-                            style={{ color: 'black', borderButton: '1px solid black', height: '45px', font: 'message-box', fontSize: '40px' }} 
-                            index={value} key={choice}
-                            hover>
+                            <h2 className='m-auto bg-secundary'
+                                style={{ color: 'black', borderButton: '1px solid black', height: '45px', font: 'message-box', fontSize: '40px' }}
+                                index={value} key={choice}
+                                hover>
                                 {choice.choice}
                             </h2>
                         </ListGroup.Item>
@@ -45,7 +46,7 @@ export const TemplateToRenderData = () => {
             <div className='row'>
                 <TemplateToRenderAnswer />
             </div>
-
+            <div id='divider' />
             <div className='row'>
                 <Button className='m-auto bg-success col' style={{ height: '35px', display: '-ms-flexbox' }} onClick={Clicked} >SKIP</Button>
                 <Button className='m-auto bg-danger col' style={{ height: '35px', display: '-ms-flexbox' }} onClick={Reset}>RESET</Button>
