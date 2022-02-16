@@ -9,7 +9,10 @@ export const TemplateToRenderData = () => {
 
     function Clicked() {
         index++
-        console.log('clicked', index)
+        if(index > ObjectData.length){
+            return index = ObjectData.length-1;
+        }
+        console.log('cliked', index)
     }
 
     function Reset() {
