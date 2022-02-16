@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ObjectData } from './ObjectData'
 import { Button, ListGroup } from 'react-bootstrap'
 import { TemplateToRenderQuestion } from './TemplateRenderQuestion'
@@ -12,6 +12,11 @@ export const TemplateToRenderData = () => {
         console.log('clicked', index)
     }
 
+    function Reset() {
+        index = 0;
+        console.log('reset', index)
+    }   
+
 
     return (
         <>
@@ -19,12 +24,14 @@ export const TemplateToRenderData = () => {
                 <TemplateToRenderQuestion />
             </div>
             <div className='row'>
-                {console.log(TemplateToRenderQuestion)}
                 {ObjectData.map((choice, value) => {
                     return (
 
                         <ListGroup.Item>
-                            <h2 style={{ color: 'black' }} index={value} key={choice}>
+                            <h2 className='m-auto bg-secundary' 
+                            style={{ color: 'black', borderButton: '1px solid black', height: '45px', font: 'message-box', fontSize: '40px' }} 
+                            index={value} key={choice}
+                            hover>
                                 {choice.choice}
                             </h2>
                         </ListGroup.Item>
@@ -37,7 +44,8 @@ export const TemplateToRenderData = () => {
             </div>
 
             <div className='row'>
-                <Button className='m-auto bg-success col-4' style={{ height: '35px', display: '-ms-flexbox' }} onClick={Clicked} >SKIP</Button><Button className='m-auto bg-success col-4' style={{ height: '35px' }}></Button>
+                <Button className='m-auto bg-success col' style={{ height: '35px', display: '-ms-flexbox' }} onClick={Clicked} >SKIP</Button>
+                <Button className='m-auto bg-danger col' style={{ height: '35px', display: '-ms-flexbox' }} onClick={Reset}>RESET</Button>
             </div>
         </>
     )
