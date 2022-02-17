@@ -23,11 +23,16 @@ export const TemplateToRenderData = () => {
 
     return (
         <>
+       {/* Primer div para establecer la fila de las preguntas de formar separada */}
+
             <div className='row'>
                 <TemplateToRenderQuestion />
             </div>
             <div id='divider' />
+            {/* div para establecer el espacio donde las opciones van a ser renderizadas */}
             <div className='row'>
+                {/*map() funcion para renderizar todos los elementos existentes en el array donde estamos pasando dos parametros, choice y value, una vez renderizados, sera hecho 
+                en una linea debiso a la estructura que se le esta dando a cada resultado */}
                 {ObjectData.map((choice, value) => {
                     return (
 
