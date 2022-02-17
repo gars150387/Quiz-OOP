@@ -26,7 +26,9 @@ export const TemplateToRenderData = () => {
        {/* Primer div para establecer la fila de las preguntas de formar separada */}
 
             <div className='row'>
-                <TemplateToRenderQuestion />
+                <TemplateToRenderQuestion onClick={()=> function(){
+                    console.log('Clicked')
+                }} />
             </div>
             <div id='divider' />
             {/* div para establecer el espacio donde las opciones van a ser renderizadas */}
@@ -40,7 +42,9 @@ export const TemplateToRenderData = () => {
                             <h2 className='m-auto bg-secundary'
                                 style={{ color: 'black', borderButton: '1px solid black', height: '45px', font: 'message-box', fontSize: '40px' }}
                                 index={value} key={choice}
-                                hover>
+                                onClick={()=> function (){
+                                    console.log('choiced')
+                                }}>
                                 {choice.choice}
                             </h2>
                         </ListGroup.Item>
