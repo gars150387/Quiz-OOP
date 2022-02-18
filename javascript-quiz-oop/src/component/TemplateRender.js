@@ -41,10 +41,7 @@ export const TemplateToRenderData = () => {
                         <ListGroup.Item>
                             <h2 className='m-auto bg-secundary'
                                 style={{ color: 'black', borderButton: '1px solid black', height: '45px', font: 'message-box', fontSize: '40px' }}
-                                index={index} key={choice}
-                                onClick={()=> function (){
-                                    console.log('choiced')
-                                }}>
+                                index={index} key={choice}>
                                 {choice.choice}
                             </h2>
                         </ListGroup.Item>
