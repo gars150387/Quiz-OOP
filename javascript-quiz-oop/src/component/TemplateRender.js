@@ -35,13 +35,13 @@ export const TemplateToRenderData = () => {
             <div className='row'>
                 {/*map() funcion para renderizar todos los elementos existentes en el array donde estamos pasando dos parametros, choice y value, una vez renderizados, sera hecho 
                 en una linea debiso a la estructura que se le esta dando a cada resultado */}
-                {ObjectData.map((choice, value) => {
+                {ObjectData.map((choice) => {
                     return (
 
                         <ListGroup.Item>
                             <h2 className='m-auto bg-secundary'
                                 style={{ color: 'black', borderButton: '1px solid black', height: '45px', font: 'message-box', fontSize: '40px' }}
-                                index={value} key={choice}
+                                index={index} key={choice}
                                 onClick={()=> function (){
                                     console.log('choiced')
                                 }}>
