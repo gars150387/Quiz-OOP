@@ -1,4 +1,4 @@
-export const ObjectData = [{
+export const objectData = [{
     question: "who is Gustavo",
     choice: ["a person", "a aircraft", "a bird", "a plant"],
     answer: "a person"
