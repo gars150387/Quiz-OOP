@@ -1,36 +1,49 @@
 import React, { useState } from "react";
-import { ListGroup } from "react-bootstrap";
-import { AnswersOptions } from "./Choices";
-// import { FooterCounter } from "./Footer";
-// import { QuestionsRender } from './Questions'
 import { Button, Card } from "react-bootstrap";
-// import { state } from './Actions'
 import { QuestionsOptions } from "./QuestionsData";
-import { ObjectData } from "./ObjectData";
+import { objectData } from "./ObjectData";
+import { answersOptions } from "./Choices";
 
-export const Options = () => {
+export const Options = ({value = 0}) => {
 
-    const [setClicked] = useState('')
-    const [increase, setIncrease] = useState(0)
-    const [reset, setReset] = useState(false)
+    const [counter, setCounter] = useState( 0 )
 
-    let index = increase
-    console.log('index', increase)
+    let index = counter
 
-    
+    function increaseIndex(){
+        setCounter(counter + 1)
+    }
 
+    function decreaseIndex(){
+        setCounter(counter - 1)
+    }
+
+    function resetIndex (){
+        setCounter(value)
+    }
 
     return (
         <>
 
             <Card.Footer key={QuestionsOptions[index][index]} style={{ color: 'black' }}>{QuestionsOptions[index]}</Card.Footer>
+            {/* <Card.Footer key={QuestionsOptions[index][index]} style={{ color: 'black' }}>{objectData.question[index]}</Card.Footer> */}
             {/* comment component  */}
             {/* <QuestionsRender index={index} /> */}
 
-            {ObjectData[index]&& ObjectData[index].map((choice)=>{
+
+            {answersOptions && answersOptions.map(item =>{
+                console.log('answers',answersOptions[index])
                 return (
-                    <li>
-                        {choice}
+                    <li key={item.index}>
+                        {item.choice}
+                    </li>
+                )
+            })}
+            {objectData.choice && objectData.choice.ma( item =>{
+                console.log('choices',objectData.choice)
+                return (
+                    <li key={item.choice}>
+                        {item.choice}
                     </li>
                 )
             })}
@@ -45,11 +58,15 @@ export const Options = () => {
             }
             )
             } */}
-            <Button className="bg-danger m-auto" style={{height: '50px', color: 'white', width: '75%'}} onClick={()=> setIncrease(index + 1)}>SKIP</Button>
-            <Button className="bg-success m-auto" style={{height: '50px', color: 'black', width: '75%'}} value={reset}>RESET</Button>
+            <Button className="bg-danger m-auto" style={{height: '50px', color: 'white', width: '75%'}} onClick={ increaseIndex }>SKIP</Button>
+            <Button className="bg-success m-auto" style={{height: '50px', color: 'black', width: '75%'}} onClick={ resetIndex }>RESET</Button>
 
             <Card.Footer key={index} className="text-muted">Question{` ${index + 1} of ${QuestionsOptions.length}`}</Card.Footer>
             {/* <FooterCounter /> */}
         </>
     )
 }
+
+// Options.propType={
+//     value: PropType.number.isRequired 
+// }
