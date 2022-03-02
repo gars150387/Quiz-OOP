@@ -1,13 +1,14 @@
 export const objectData = [{
     question: "who is Gustavo",
-    choice: ["a person", "a aircraft", "a bird", "a plant"],
+    choice: [" person ", " aircraft ", " bird ", " plant "],
     answer: "a person"
-},{
+}, {
     question: "Where is he coming from",
-    choice: ["venezuela", "a aircraft", "a bird", "a plant"],
+    choice: ["venezuela ", 'uruguay ', 'brasil ', 'argentina '],
     answer: "venezuela"
-},{
+}, {
     question: "how old is he",
-    choice: ["34", "a aircraft", "a bird", "a plant"],
+    choice: ["34 ", '55 ', '85 ', '20'],
     answer: "34"
 }]
+
