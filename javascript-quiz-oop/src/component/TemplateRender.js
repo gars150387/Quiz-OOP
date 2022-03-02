@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { ObjectData } from './ObjectData'
+import { objectDataData } from './ObjectData'
 import { Button, ListGroup } from 'react-bootstrap'
 import { TemplateToRenderQuestion } from './TemplateRenderQuestion'
 import { TemplateToRenderAnswer } from './TemplateToRenderAnswer'
@@ -9,8 +9,8 @@ export const TemplateToRenderData = () => {
 
     function Clicked() {
         index++
-        if (index > ObjectData.length) {
-            return index = ObjectData.length - 1;
+        if (index > objectDataData.length) {
+            return index = objectDataData.length - 1;
         }
         console.log('cliked', index)
     }
@@ -35,7 +35,7 @@ export const TemplateToRenderData = () => {
             <div className='row'>
                 {/*map() funcion para renderizar todos los elementos existentes en el array donde estamos pasando dos parametros, choice y value, una vez renderizados, sera hecho 
                 en una linea debiso a la estructura que se le esta dando a cada resultado */}
-                {ObjectData.map((choice) => {
+                {objectDataData.map((choice) => {
                     return (
 
                         <ListGroup.Item>
