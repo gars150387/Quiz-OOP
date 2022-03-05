@@ -1,24 +1,27 @@
-import React, { useEffect } from 'react'
-import { objectDataData } from './ObjectData'
+import React, { useEffect, useState } from 'react'
+import { objectData} from './ObjectData'
 import { Button, ListGroup } from 'react-bootstrap'
 import { TemplateToRenderQuestion } from './TemplateRenderQuestion'
 import { TemplateToRenderAnswer } from './TemplateToRenderAnswer'
+import { Counting } from './Counting'
 
-export const TemplateToRenderData = () => {
-    let index = null
+export const TemplateToRenderData = ({startValue}) => {
 
-    function Clicked() {
-        index++
-        if (index > objectDataData.length) {
-            return index = objectDataData.length - 1;
-        }
-        console.log('cliked', index)
+    startValue = 0
+
+    const [countIndex, setCountIndex] = useState(0)
+
+    const Skip = ()  =>{
+        setCountIndex(countIndex + 1)
+        console.log(countIndex)
     }
 
-    function Reset() {
-        index = 0;
-        console.log('reset', index)
+    const Reset = () =>{
+        setCountIndex(startValue)
+        console.log(startValue)
     }
+
+    // console.log(Reset())
 
 
     return (
@@ -35,13 +38,14 @@ export const TemplateToRenderData = () => {
             <div className='row'>
                 {/*map() funcion para renderizar todos los elementos existentes en el array donde estamos pasando dos parametros, choice y value, una vez renderizados, sera hecho 
                 en una linea debiso a la estructura que se le esta dando a cada resultado */}
-                {objectDataData.map((choice) => {
+                {objectData[countIndex] && objectData[countIndex].map(({question, choice}) => {
                     return (
 
                         <ListGroup.Item>
+                            <h1>{question}</h1>
                             <h2 className='m-auto bg-secundary'
                                 style={{ color: 'black', borderButton: '1px solid black', height: '45px', font: 'message-box', fontSize: '40px' }}
-                                index={index} key={choice}>
+                                >
                                 {choice.choice}
                             </h2>
                         </ListGroup.Item>
@@ -54,7 +58,7 @@ export const TemplateToRenderData = () => {
             </div>
             <div id='divider' />
             <div className='row'>
-                <Button className='m-auto bg-success col' style={{ height: '35px', display: '-ms-flexbox' }} onClick={Clicked} >SKIP</Button>
+                <Button className='m-auto bg-success col' style={{ height: '35px', display: '-ms-flexbox' }} onClick={ Skip } >SKIP</Button>
                 <Button className='m-auto bg-danger col' style={{ height: '35px', display: '-ms-flexbox' }} onClick={Reset}>RESET</Button>
             </div>
         </>
