@@ -1,15 +1,8 @@
-import { QuestionsOptions } from "./QuestionsData"
-import { Card } from "react-bootstrap"
-import { Counting } from "./Counting"
+import React from 'react';
+import { objectData } from './ObjectData';
 
-
-export const FooterCounter = () => {
-    let index = 0
-
+export const Footer = ({ index }) =>{
     return (
-        <>
-            {<Card.Footer className="text-muted">Question{` ${index + 1} of ${QuestionsOptions.length}`}</Card.Footer>
-            }
-        </>
+        <div>{`Question ${index + 1} de ${objectData.length}`}</div>
     )
 }
