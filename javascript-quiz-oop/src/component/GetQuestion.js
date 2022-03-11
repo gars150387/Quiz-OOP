@@ -1,9 +1,13 @@
 import React from 'react';
+import { objectData } from './ObjectData';
 
-export const GetQuestion = ({ question }) => {
+export const GetQuestion = ({ index }) =>{
+    const { question } = objectData[index];
+
     return (
-        <div>
-            <h3>{ question }</h3>
-        </div>
+        <>
+        { question }
+        </>
     )
+
 }
